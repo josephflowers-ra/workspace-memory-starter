@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-03-13T03:44:41+00:00",
+  "required_meta_files": [
+    "project_brief.md",
+    "work_items.json",
+    "session_state.json",
+    "memory.md",
+    "handoff.md",
+    "progress_log.md"
+  ],
+  "projects": [
+    {
+      "slug": "example-project",
+      "title": "Example Project",
+      "path": "projects/example-project",
+      "kind": "project",
+      "status": "active",
+      "selectable": true,
+      "last_session_date": "",
+      "has_meta": true,
+      "required_meta_complete": true,
+      "missing_meta_files": []
+    }
+  ]
+}
