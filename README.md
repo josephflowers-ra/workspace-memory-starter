@@ -8,6 +8,14 @@ If you want the shortest possible instruction:
 2. Create or choose a project
 3. Keep your memory files updated as you work
 
+This starter is designed in layers:
+- files only
+- files + Git
+- files + Python helpers
+- files + Git + Python helpers
+
+The file-based path is the foundation. Everything else is optional.
+
 **Quick Start**
 
 1. Open `Start_Here.md`
@@ -34,6 +42,30 @@ It stays readable because everything is just files on disk.
 
 This starter works as plain files on disk.
 
+You do not need Python, Git, or GitHub to use the core structure.
+
+## Choose Your Setup
+
+### 1. Files only
+
+Use this if you want the simplest possible setup.
+
+- Open and edit the Markdown and JSON files directly
+- Create new project folders manually by copying the example project
+- Add checkpoints by editing `memory/recent_chat_memory.md` yourself
+
+### 2. Files + Git
+
+Use this if you want local history and diffs.
+
+- Keep the same file-based workflow
+- Add `git status`, `git add`, and `git commit` around meaningful milestones
+- GitHub is optional
+
+### 3. Files + Python helpers
+
+Use this if you want lightweight automation without committing anything.
+
 If you want the helper scripts:
 
 ```bash
@@ -43,6 +75,22 @@ python3 -m pip install -r requirements.txt
 ```
 
 If you do not use a virtual environment, the scripts also work with system `python3`.
+
+With Python available, you can use:
+- `make new-project`
+- `make checkpoint-memory`
+- `make project-index-refresh`
+- `make memory-trim-recent`
+- `make memory-validate`
+
+### 4. Files + Git + Python helpers
+
+This is the most complete workflow.
+
+- Files remain the source of truth
+- Python reduces repetitive editing
+- Git keeps changes auditable
+- GitHub is still optional
 
 ## What You Get
 
@@ -138,6 +186,11 @@ As soon as you start using this seriously:
 - update `memory/global_memory.md` with your actual cross-project preferences
 - update `memory/people/user_context.md` with your real collaboration context
 - start building real checkpoints in `memory/recent_chat_memory.md`
+
+If you are not using Python:
+- duplicate `projects/example-project/meta/` manually for new projects
+- update `projects/project_index.json` by hand
+- write checkpoints directly into `memory/recent_chat_memory.md`
 
 ## Core Idea
 

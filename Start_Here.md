@@ -2,6 +2,37 @@
 
 This file is the session entrypoint for this workspace.
 
+You can use this system in four ways:
+- files only
+- files + Git
+- files + Python helpers
+- files + Git + Python helpers
+
+Files are always the source of truth. Python and Git are optional layers.
+
+## Pick Your Mode
+
+### Files only
+
+- Edit the Markdown and JSON files directly
+- Create new projects by copying the example project structure
+- Add checkpoints manually to `memory/recent_chat_memory.md`
+
+### Files + Git
+
+- Use the same file-based workflow
+- Add commits when you reach meaningful milestones
+
+### Files + Python helpers
+
+- Use `make new-project`, `make checkpoint-memory`, and the other helpers
+- The files remain the real source of truth
+
+### Files + Git + Python helpers
+
+- Use the helpers for speed
+- Use Git for history and sharing
+
 ## Where Memory Lives
 
 - Workspace memory root: `memory/`
@@ -19,7 +50,8 @@ This file is the session entrypoint for this workspace.
 2. Choose the active project
    - `example-project` is only a placeholder; replace it with your own real project when you start
 3. If the work does not fit an existing project, create one:
-   - `make new-project NAME=<project-slug>`
+   - With Python helpers: `make new-project NAME=<project-slug>`
+   - Without Python: copy `projects/example-project/` to a new slug and update `projects/project_index.json`
 4. Read:
    - `projects/<project-slug>/meta/project_brief.md`
    - `memory/recent_chat_memory.md`
@@ -55,6 +87,8 @@ make checkpoint-memory \
   CHECKPOINT_TAGS="memory,checkpoint"
 ```
 
+Without Python, add the checkpoint entry manually to `memory/recent_chat_memory.md`.
+
 Optional maintenance:
 
 ```bash
@@ -62,6 +96,11 @@ make project-index-refresh
 make memory-trim-recent RECENT_LIMIT=3
 make memory-validate
 ```
+
+Without Python, you can still:
+- update `projects/project_index.json` by hand
+- trim `memory/recent_chat_memory.md` manually
+- visually inspect the memory files for consistency
 
 ## Session End Routine
 
